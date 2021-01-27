@@ -7,7 +7,7 @@ const OnlineStoreScreen = () => {
   return (
     <>
       <Navbar />
-      <OnlineStoreProducts />
+      <OnlineStoreProducts text="Shop Product" />
       <Footer />
     </>
   )

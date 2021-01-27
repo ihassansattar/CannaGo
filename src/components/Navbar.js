@@ -4,29 +4,39 @@ import logo from '../images/logo.png'
 import cannabisImg from '../images/cannabis-img.png'
 import bagIcon from '../images/bag-icon.svg'
 import userIcon from '../images/user-icon.svg'
-
-import { RiMenu4Fill } from 'react-icons/ri'
-
+import {useHistory} from "react-router-dom";
+import {RiMenu4Fill} from 'react-icons/ri'
 
 const Navbar = () => {
+    let history = useHistory();
+    const Shop = () => {
+        history.push("/storeonline");
+    }
+    const Home = () => {
+        history.push("/");
+    }
+    const Cart = () =>{
+        history.push("/emptycart");
 
-    const [navbarIsOpen, setNavbarIsOpen] = React.useState(false)
+    }
+    const [navbarIsOpen,
+        setNavbarIsOpen] = React.useState(false)
 
     const toggleNavbar = () => setNavbarIsOpen(!navbarIsOpen)
 
     return (
         <nav className="navbar">
             {/*Cannabis img*/}
-            <img src={cannabisImg} alt="cannabis-img" className="cannabis-img" />
+            <img src={cannabisImg} alt="cannabis-img" className="cannabis-img"/>
 
             <div className="container">
                 <div className="navbar-wrapper">
-                    <a href="/" className="logo">
-                        <img src={logo} alt="logo-img" />
+                    <a onClick={Home} className="logo pointer">
+                        <img src={logo} alt="logo-img"/>
                     </a>
                     <ul className={`nav__list ${navbarIsOpen && "show"}`}>
                         <li className="nav__list-item active">
-                            <a href="/" className="nav__list-link">Shop</a>
+                            <a onClick={Shop} className="nav__list-link pointer">Shop</a>
                         </li>
                         <li className="nav__list-item">
                             <a href="/" className="nav__list-link">follow us</a>
@@ -50,20 +60,20 @@ const Navbar = () => {
                             <a href="/" className="nav__list-link">careers</a>
                         </li>
                         <li className="nav__list-item nav-link-icon">
-                            <a href="/" className="nav__list-link">
-                                <img src={bagIcon} alt="bag-icon" />
+                            <a onClick={Cart} className="nav__list-link pointer">
+                                <img src={bagIcon} alt="bag-icon"/>
                             </a>
                         </li>
                         <li className="nav__list-item nav-link-icon">
                             <a href="/login" className="nav__list-link">
-                                <img src={userIcon} alt="user-icon" />
+                                <img src={userIcon} alt="user-icon"/>
                                 SignIn
                             </a>
                         </li>
                     </ul>
 
                     <div className="btn-toggle" onClick={toggleNavbar}>
-                        <RiMenu4Fill />
+                        <RiMenu4Fill/>
                     </div>
 
                 </div>

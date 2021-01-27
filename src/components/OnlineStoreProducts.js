@@ -12,7 +12,7 @@ import img3 from '../images/product-3.png'
 import img4 from '../images/product-4.png'
 
 
-const ShopProducts = () => {
+const ShopProducts = (props) => {
 
     function Item(props) {
         return <ProductCard />;
@@ -74,7 +74,7 @@ const ShopProducts = () => {
         <section className="shop-products">
             <div className="container">
                 <div className="shop-products-wrapper-nonbg">
-                    <h2>Shop Product</h2>
+                    <h2 className="slider-text">{props.text}</h2>
 
                     <Slider {...settings}>
                         {products.map(el => (<ProductCard key={el.id} {...el} />))}
