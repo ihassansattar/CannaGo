@@ -21,7 +21,7 @@ const Blog = () => {
 
     return (
         <section className="blog">
-            <div className="container">
+            <div className="my-container">
                 <div className="blog-wrapper">
                     <h2 className="h2-heading">
                         Blog

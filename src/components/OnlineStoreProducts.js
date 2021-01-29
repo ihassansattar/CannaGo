@@ -72,7 +72,7 @@ const ShopProducts = (props) => {
 
     return (
         <section className="shop-products">
-            <div className="container">
+            <div className="my-container">
                 <div className="shop-products-wrapper-nonbg">
                     <h2 className="slider-text">{props.text}</h2>
 

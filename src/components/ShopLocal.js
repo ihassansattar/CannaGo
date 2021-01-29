@@ -55,7 +55,7 @@ const ShopLocal = () => {
 
     return (
         <section className="shop-local">
-            <div className="container">
+            <div className="my-container">
                 <div className="shop-local-wrapper">
                     <h2 className="h2-heading">
                         Shop Local Dispensaries

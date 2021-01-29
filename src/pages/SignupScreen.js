@@ -39,7 +39,7 @@ export default function SignupScreen() {
           <input type="checkbox" id="agreeTerms" name="agreeTerms" />
           <label htmlFor="agreeTerms" id="agreeLabel"> By checking this I agree to CannaGo's <a href='/' style={{ color: '#61D273' }}> Terms & Conditions</a> </label>
         </div>
-        <button className="btn-primary">Create Account</button>
+        <button className="bt-primary">Create Account</button>
 
       </form>
 

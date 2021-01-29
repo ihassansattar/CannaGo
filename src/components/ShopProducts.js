@@ -60,7 +60,7 @@ const ShopProducts = () => {
 
     return (
         <section className="shop-products">
-            <div className="container">
+            <div className="my-container">
                 <div className="shop-products-wrapper">
                     <h2>Shop Product</h2>
 
