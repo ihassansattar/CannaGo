@@ -22,6 +22,9 @@ const Navbar = () => {
     const status =() =>{
         history.push("/orderstatus");
     }
+    const login =() =>{
+        history.push("/login");
+    }
     const [navbarIsOpen,
         setNavbarIsOpen] = useState(false)
 
@@ -72,7 +75,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li className="nav-list-item  nav-link-icon">
-                            <a href="/login" className="nav-list-link ">
+                            <a onClick={login} className="nav-list-link pointer ">
                                 <img src={userIcon} alt="user-icon"/>
                                 SignIn
                             </a>
