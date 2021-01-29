@@ -564,11 +564,13 @@ section {
     justify-content: space-between;
     padding: 1rem 4rem;
 }
+
 .checkout-form-address input {
     border-radius: 50px;
     border: solid 0.5px #979797;
     width: 25%;
     padding: 2rem;
+    outline: none!important;
 }
 
 .checkout-form-specialr {
