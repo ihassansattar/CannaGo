@@ -6,10 +6,24 @@ const Experience = () => {
     const Shop = () => {
         history.push("/storeonline");
     }
+    const [buttons,
+        setButtons] = useState([false, false, false, false]);
+    const [experience,
+        setExperience] = useState([false, false, false]);
     const [rating,
         setRating] = useState(4);
     const changeRating = (newRating) => {
         setRating(newRating)
+    }
+    const activeRatingButton = e => {
+        let activeButton = [false, false, false, false]
+        activeButton[e] = true;
+        setButtons(activeButton);
+    }
+    const activeExperienceButton = e => {
+        let activeButton = [false, false, false]
+        activeButton[e] = true;
+        setExperience(activeButton);
     }
     return (
         <div className="experience-cont">
@@ -29,17 +43,31 @@ const Experience = () => {
                 </div>
                 <h3>Leave Tip?</h3>
                 <div className="experience-tip">
-                    <button>10%</button>
-                    <button>15%</button>
-                    <button>20%</button>
-                    <button>Custom</button>
+                    <button
+                        onClick={() => activeRatingButton(0)}
+                        className={buttons[0] ? ' active-rating-button':""}>10%</button>
+                    <button
+                        onClick={() => activeRatingButton(1)}
+                        className={buttons[1] ? ' active-rating-button':""}>15%</button>
+                    <button
+                        onClick={() => activeRatingButton(2)}
+                        className={buttons[2] ? ' active-rating-button':""}>20%</button>
+                    <button
+                        onClick={() => activeRatingButton(3)}
+                        className={buttons[3] ? ' active-rating-button':""}>Custom</button>
                 </div>
                 <h3>What could be better?</h3>
                 <div className="experience-better">
-                    <button>User experience
+                    <button
+                        onClick={() => activeExperienceButton(0)}
+                        className={experience[0] ? ' active-rating-button' : ''}>User experience
                     </button>
-                    <button>Packaging</button>
-                    <button>Timing</button>
+                    <button
+                        onClick={() => activeExperienceButton(1)}
+                        className={experience[1] ? ' active-rating-button' : ''}>Packaging</button>
+                    <button
+                        onClick={() => activeExperienceButton(2)}
+                        className={experience[2] ? ' active-rating-button': ''}>Timing</button>
                 </div>
                 <div className="experience-comment">
                     <label>Leave comment</label>

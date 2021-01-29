@@ -14,6 +14,7 @@ optgroup,
 select,
 textarea {
     font-size: initial!important;
+    outline: none!important;
 }
 body,
 button,
@@ -550,14 +551,28 @@ section {
     letter-spacing: 1.63px;
     color: #212121;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .checkout-form-card input {
     border-radius: 100px;
     border: solid 0.5px #979797;
     background-color: transparent;
-    width: 50%;
+    width: 50%!important;
     padding: 2rem !important;
     outline: none;
     margin-top: 10px !important;
+}
+.checkout-form-card{
+    width: 50%;
 }
 .checkout-form-address {
     display: flex;
@@ -585,10 +600,12 @@ section {
     display: flex;
     justify-content: space-between;
 }
-.checkout-form-special-request input {
+.checkout-form-special-request textarea {
     border: 0;
     background: transparent;
     outline: none;
+    width: 95%;
+    overflow:hidden;
     padding: 1.75rem 1.75rem 8rem 5rem;
 }
 .checkout-form-submit {
@@ -1225,8 +1242,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .bt-primary {
-    font-size: 2.5rem;
+    font-size: 2.5rem!important;
     text-transform: capitalize;
+    outline: none!important;
     color: #fff;
     background-color: #61d273;
     padding: 0.5rem;
@@ -2193,6 +2211,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     border: 0;
 }
+.active-rating-button{
+    background-color: #61d273!important;
+    color: white!important;
+    border: 0!important;
+}
 .experience-better {
     display: flex;
     justify-content: space-between;
@@ -2213,7 +2236,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #3c3b4c;
 }
 .experience-better button:hover {
-    color: #000;
+    background-color: #61d273!important;
+    color: white!important;
+    border: 0!important;
 }
 .experience-comment {
     display: flex;

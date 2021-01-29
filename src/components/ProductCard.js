@@ -12,7 +12,7 @@ const ProductCard = ({price, img, name}) => {
         <div className="product-card">
             <div className="product-card-img">
                 <img src={img} alt="" className="productImg"/>
-                <span className="product-price">$ {price}</span>
+                <span className="product-price">$ {price.toFixed(2)}</span>
             </div>
             <div className="product-card-info">
                 <h3>{name}</h3>
