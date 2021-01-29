@@ -14,8 +14,14 @@ const ProfileSettings = () => {
     const logout = () => {
         history.push("/login");
     }
-    const modalHandler = ()=>{
+    const modalHandler = () => {
         setModalShow(true)
+    }
+    const profile = () => {
+        history.push("/profileinfo");
+    }
+    const orderhistory = () => {
+        history.push('/orderhistory');
     }
     return (
         <div className="profile-settings">
@@ -25,8 +31,8 @@ const ProfileSettings = () => {
                     <Profile src={Avatar}/>
                     <p>John H, 25</p>
                 </div>
-                <ProfileCard text="Profile Information" src={User}/>
-                <ProfileCard text="Order History" src={Hist}/>
+                <ProfileCard onClick={profile} text="Profile Information" src={User}/>
+                <ProfileCard onClick={orderhistory} text="Order History" src={Hist}/>
                 <ProfileCard onClick={modalHandler} text="Contact Support" src={User}/>
                 <ProfileCard onClick={logout} text="Log Out" src={User}/>
             </div>

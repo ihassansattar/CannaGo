@@ -13,6 +13,8 @@ import CheckoutScreen from '../pages/CheckoutScreen'
 import OrderStatusScreen from '../pages/OrderStatusScreen';
 import OrderExperience from '../pages/OrderExperience';
 import ProfileScreen from '../pages/ProfileScreen'
+import ProfileInformationScreen from '../pages/ProfileInformationScreen'
+import OrderHistoryScreen from '../pages/OrderHistoryScreen';
 export default function MyRouts() {
     return (
         <Router >
@@ -29,6 +31,8 @@ export default function MyRouts() {
                 <Route path="/orderstatus" component={OrderStatusScreen}/>
                 <Route path="/orderexperience" component={OrderExperience}/>
                 <Route path="/profile" component={ProfileScreen}/>
+                <Route path="/profileinfo" component={ProfileInformationScreen}/>
+                <Route path="/orderhistory" component={OrderHistoryScreen}/>
             </Switch>
         </Router>
     );
