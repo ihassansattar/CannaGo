@@ -2,16 +2,28 @@ import React from 'react'
 import ImageRight from '../images/profile-right.png';
 import ImageLeft from '../images/profile-left.png';
 import User from '../images/user-green.svg'
-import Contact from '../images/contact.png'
-import Email from '../images/email.png'
-import Password from '../images/password.png';
+import Contact from '../images/contact.svg'
+import Email from '../images/email.svg'
+import Password from '../images/password.svg';
 import ProfileFormNameCard from './ProfileFormNameCard'
-import ProfileFormCard from './ProfileFormCard';
 import ProfileFormButton from './ProfileFormButton'
-
+import {useHistory} from "react-router-dom";
 const ProfileInfo = () => {
+    let history = useHistory();
     const submitHandler = e => {
         e.preventDefault();
+    }
+    const phoneHandler = () =>{
+        history.push('/editcontact');
+    }
+    const emailHandler = () =>{
+        history.push('/editemail');
+    }
+    const passwordHandler = () =>{
+        history.push('/editpassword');
+    }
+    const deactivateHandler = () =>{
+        history.push('/deactivate');
     }
     return (
         <div>
@@ -22,23 +34,15 @@ const ProfileInfo = () => {
                         <h1>Profile Information</h1>
                         <p>Welcome John H, 25</p>
                         <div className="profile-form-name">
-                            <ProfileFormNameCard src={User} text="John" placeholder="First name"/>
-                            <ProfileFormNameCard src={User} text="Henry" placeholder="Last name"/>
-                            <ProfileFormNameCard src={User} text="06/28/1994" placeholder="D.O.B"/>
+                            <ProfileFormNameCard type="text" src={User} text="John" placeholder="First name"/>
+                            <ProfileFormNameCard type="text" src={User} text="Henry" placeholder="Last name"/>
+                            <ProfileFormNameCard type="date" src={User} text="06/28/1994" placeholder="D.O.B"/>
                         </div>
                         <div className="profile-cards">
-                            <ProfileFormCard
-                                text="Phone Number:"
-                                type="text"
-                                placeholder="786 7821 1232"
-                                src={Contact}/>
-                            <ProfileFormCard
-                                text="Email:"
-                                type="email"
-                                placeholder="JohnH@gmail.com"
-                                src={Email}/>
-                            <ProfileFormButton text="Change Password" src={Password}/>
-                            <ProfileFormButton text="Deactivate Account" src={User}/>
+                            <ProfileFormButton onclick={phoneHandler} text="Phone Number:786 7821 1232" src={Contact}/>
+                            <ProfileFormButton onclick={emailHandler} text="Email:JohnH@gmail.com" src={Email}/>
+                            <ProfileFormButton onclick={passwordHandler} text="Change Password" src={Password}/>
+                            <ProfileFormButton onclick={deactivateHandler} isDeactive={true} text="Deactivate Account" src={User}/>
                         </div>
                         <div className="form-submit">
                             <button>Update</button>

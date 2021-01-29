@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, {useState} from 'react'
 //logo
 import logo from '../images/logo.png'
 import cannabisImg from '../images/cannabis-img.png'
@@ -8,7 +8,7 @@ import {useHistory} from "react-router-dom";
 import {RiMenu4Fill} from 'react-icons/ri'
 import OrderIcon from '../images/order-status.png'
 
-const Navbar = () => {
+const Navbar = (props) => {
     let history = useHistory();
     const Shop = () => {
         history.push("/storeonline");
@@ -19,10 +19,10 @@ const Navbar = () => {
     const Cart = () => {
         history.push("/emptycart");
     }
-    const status =() =>{
+    const status = () => {
         history.push("/orderstatus");
     }
-    const login =() =>{
+    const login = () => {
         history.push("/login");
     }
     const [navbarIsOpen,
@@ -44,8 +44,8 @@ const Navbar = () => {
                     <a onClick={Home} className="logo pointer">
                         <img src={logo} alt="logo-img"/>
                     </a>
-                    <ul className={`nav-list  ${navbarIsOpen && "show"}`}>
-                        <li className="nav-list-item  active">
+                    <ul className={`nav-list ${navbarIsOpen && "show"}`}>
+                        <li className={`nav-list-item  ${localStorage.getItem("loggedIn") != "true" &&  ' active'}`}>
                             <a onClick={Shop} className="nav-list-link  pointer">Shop</a>
                         </li>
                         <li className="nav-list-item ">
@@ -74,10 +74,11 @@ const Navbar = () => {
                                 <img src={bagIcon} alt="bag-icon"/>
                             </a>
                         </li>
-                        <li className="nav-list-item  nav-link-icon">
-                            <a onClick={login} className="nav-list-link pointer ">
-                                <img src={userIcon} alt="user-icon"/>
-                                SignIn
+                        <li className={`nav-list-item  nav-link-icon ${localStorage.getItem("loggedIn") && " active2"}`}>
+                            <a onClick={login} className="nav-list-link pointer mb-1 ">
+                                <img src={userIcon} alt="user-icon"/> {localStorage.getItem("loggedIn")
+                                    ? "Welcome, John "
+                                    : "Sign In"}
                             </a>
                         </li>
                     </ul>

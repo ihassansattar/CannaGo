@@ -3,8 +3,8 @@ import React from 'react'
 const ProfileFormButton = props => {
 
     return (
-        <button className="profile-form-card profile-button" type="button">
-            <img src={props.src}/>
+        <button onClick={props.onclick} className={`profile-form-card profile-button ${props.isDeactive &&' profile-hover'} ` } type="button">
+            <img src={props.src} width="26" />
             <h3>{props.text}
             </h3>
         </button>

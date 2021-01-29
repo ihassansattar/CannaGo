@@ -12,6 +12,7 @@ const ProfileSettings = () => {
         setModalShow] = useState(false);
     let history = useHistory();
     const logout = () => {
+        localStorage.clear();
         history.push("/login");
     }
     const modalHandler = () => {
@@ -34,7 +35,7 @@ const ProfileSettings = () => {
                 <ProfileCard onClick={profile} text="Profile Information" src={User}/>
                 <ProfileCard onClick={orderhistory} text="Order History" src={Hist}/>
                 <ProfileCard onClick={modalHandler} text="Contact Support" src={User}/>
-                <ProfileCard onClick={logout} text="Log Out" src={User}/>
+                <ProfileCard onClick={logout} logout={true} text="Log Out" src={User}/>
             </div>
             <div className="profile-bg">
                 <img src={BG}/>

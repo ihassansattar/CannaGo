@@ -10,6 +10,7 @@ import {useHistory} from "react-router-dom";
 export default function LoginScreen() {
     let history = useHistory();
     const profile = () => {
+        localStorage.setItem('loggedIn',true)
         history.push("/profile");
     }
     return (

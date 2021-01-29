@@ -8,7 +8,7 @@ const ProfileFormNameCard = (props) => {
     return (
         <div className="profile-form-name-card">
             <img src={props.src}></img>
-            <input onChange={inputHandler} value={inputValue} placeholder={props.placeholder}/>
+            <input onChange={inputHandler} className="date-input" value={inputValue} type={props.type} placeholder={props.placeholder}/>
         </div>
     )
 }
