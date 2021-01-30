@@ -68,7 +68,7 @@ const CheckoutForm = () => {
                 <div className="checkout-form-pr">
                     <div className="checkout-form-promo">
                         <input placeholder="Type here"/>
-                        <button>Apply</button>
+                        <button type="button">Apply</button>
                     </div>
                 </div>
                 <p className="checkout-form-text margin-top-2">Card Number</p>
