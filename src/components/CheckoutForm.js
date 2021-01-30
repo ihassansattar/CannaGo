@@ -11,6 +11,7 @@ const CheckoutForm = () => {
     const [card,
         setCard] = useState();
     const [exp,setExp] = useState();
+    const [zip,setZip] = useState();
     const expHandler = e =>{
         let value = e.nativeEvent.data;
         if ((value >= 0 && value < 9)) {    
@@ -18,14 +19,16 @@ const CheckoutForm = () => {
             e.target.value +="/"
             setExp(e.target.value)
         }
-        // setCard(e.target.value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim());
-
     }
     const cvcHandler = e => {
         const {value, maxLength} = e.target;
         const message = value.slice(0, maxLength);
         setCvc(message);
-
+    }
+    const zipHandler = e =>{
+        const {value, maxLength} = e.target;
+        const message = value.slice(0, maxLength);
+        setZip(message);
     }
     const cardInput = e => {
         let value = e.nativeEvent.data;
@@ -102,7 +105,7 @@ const CheckoutForm = () => {
                 <div className="checkout-form-address">
                     <input placeholder="City"/>
                     <input placeholder="GA"/>
-                    <input placeholder="Zip Code"/>
+                    <input placeholder="Zip Code" value={zip} onChange={zipHandler} type="number" maxLength={6}/>
                 </div>
                 <p className="checkout-form-text margin-top-2">Special Request</p>
                 <div className="checkout-form-specialr">
