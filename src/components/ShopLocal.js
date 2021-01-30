@@ -27,16 +27,14 @@ const ShopLocal = () => {
                     infinite: true,
                     dots: false
                 }
-            },
-            {
+            }, {
                 breakpoint: 920,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     initialSlide: 2
                 }
-            },
-            {
+            }, {
                 breakpoint: 710,
                 settings: {
                     slidesToShow: 1,
@@ -47,10 +45,27 @@ const ShopLocal = () => {
     };
     //const dummy Data
     const [shopLocal] = React.useState([
-        { id: 1, name: "Cannabis Station", img: img1, hours: "9am - 9pm" },
-        { id: 2, name: "Harvest", img: img2, hours: "10am - 12pm" },
-        { id: 3, name: "Sunnyside", img: img3, hours: "9am - 11pm" },
-        { id: 4, name: "Cannabis Station 2", img: img1, hours: "9am - 9pm" },
+        {
+            id: 1,
+            name: "Cannabis Station",
+            img: img1,
+            hours: "9am - 9pm"
+        }, {
+            id: 2,
+            name: "Harvest",
+            img: img2,
+            hours: "10am - 12pm"
+        }, {
+            id: 3,
+            name: "Sunnyside",
+            img: img3,
+            hours: "9am - 11pm"
+        }, {
+            id: 4,
+            name: "Cannabis Station 2",
+            img: img1,
+            hours: "9am - 9pm"
+        }
     ])
 
     return (
@@ -62,7 +77,7 @@ const ShopLocal = () => {
                     </h2>
 
                     <Slider {...settings}>
-                        {shopLocal.map(el => (<ShopLocalCard key={el.id} {...el} />))}
+                        {shopLocal.map(el => (<ShopLocalCard key={el.id} {...el}/>))}
                     </Slider>
                 </div>
             </div>

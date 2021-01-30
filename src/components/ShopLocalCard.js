@@ -1,11 +1,15 @@
 import React from 'react'
-
-const ShopLocalCard = ({ img, name, hours }) => {
+import {useHistory} from "react-router-dom";
+const ShopLocalCard = ({img, name, hours}) => {
+    let history = useHistory();
+    const storeOnline = () => {
+        history.push('/storeonline');
+    }
     return (
         <div className="shop-local-card">
             <h2>{name}</h2>
             <div className="shop-local-card-wrapper">
-                <a href='/onlinestore'><img src={img} alt="" className="slideImg" /></a>
+                <a onClick={storeOnline}><img src={img} alt="" className="slideImg"/></a>
                 <div className="shop-local-card-info">
                     <span>Store’s Pricing: $</span>
                     <span>Hours Today: {hours}</span>

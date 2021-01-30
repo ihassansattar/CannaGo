@@ -7,16 +7,7 @@ import ShopLocal from '../components/ShopLocal'
 import ShopProducts from '../components/ShopProducts'
 
 const LandingScreen = () => {
-  return (
-    <>
-      <Navbar />
-      <Header />
-      <ShopLocal />
-      <ShopProducts />
-      <Blog />
-      <Footer />
-    </>
-  )
+    return (<> <Navbar/> < Header /> <ShopLocal/> < ShopProducts /> <Blog/> < Footer /> </>)
 }
 
 export default LandingScreen
