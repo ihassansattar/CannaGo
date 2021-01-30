@@ -84,7 +84,7 @@ const CheckoutForm = () => {
                 <div className="checkout-form-cardd">
                     <div className="checkout-form-card">
                         <p >Expiration Date</p>
-                        <input value={exp} onChange={e => expHandler(e)} placeholder="06/22" maxLength={7} type="text"/>
+                        <input value={exp} onChange={e => expHandler(e)} placeholder="06/22" maxLength={5} type="text"/>
                     </div>
                     <div className="checkout-form-card">
                         <p>CVC</p>
